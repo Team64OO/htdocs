@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Technology";
+    src: url("./Technology.ttf") format("truetype"), 
+         url("./Technology-Bold.ttf") format("truetype"),
+         url("./Technology-Italic.ttf") format("truetype"),
+         url("./Technology-BolItalicd.ttf") format("truetype");
+}

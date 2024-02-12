@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        .buttonbg {
+            height: 40px;
+            width: 60px;
+            position: relative;
+        }
+
+        #green {
+            background-color: lime;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #background {
+            position: relative;
+            z-index: -1;
+            border: 4px solid black;
+            height: 40px;
+            width: 120px;
+            left: 124px;
+            top: -4px;
+        }
+
+        #button {
+            position: relative;
+            background-color: #938787;
+            height: 42px;
+            width: 62px;
+            border-radius: 6px;
+            left: -61px;
+            top: -1px;
+            transition: 1s;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let position = "green"
+
+        function swap() {
+            if (position == "green") {
+                document.getElementById('button').style.left = "-121px";
+                position = "red";
+            } else {
+                document.getElementById('button').style.left = "-62px";
+                position = "green"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="flex">
+        <div id="background"></div>
+        <div class="buttonbg" id="green"></div>
+        <div class="buttonbg" id="red"></div>
+        <div id="button" onclick="swap();"></div>
+    </div>
+</body>
+
+</html>

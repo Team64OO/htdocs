@@ -1,0 +1,59 @@
+body {
+    background-color: #578a34;
+    overflow: hidden;
+}
+
+h1 {
+    position: relative;
+    left: 150px;
+    bottom: 5px;
+    font-family: monospace;
+}
+
+.playArea {
+    position: absolute;
+    left: 60px;
+    top: 60px;
+}
+
+#dark {
+    position: relative;
+    right: 504px;
+    transform: rotate(90deg);
+}
+
+#fixBackground {
+    position: relative;
+    background-color: #a2d149;
+    height: 500px;
+    width: 500px;
+    bottom: 504px;
+    z-index: -1;
+}
+
+.IOS {
+    position: relative;
+    z-index: 69;
+    left: 250px;
+    bottom: -95px;
+}
+
+.snakeHeadStyle{
+    position: relative;
+    top: -10px;
+    left: 151px;
+}
+
+#snakeHead {
+    transition: .25s;
+}
+
+.snakeBodyStyle{
+    position: relative;
+    top: -60px;
+    left: 101px;
+}
+
+#snakeBody {
+    transition: .25s;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <h2 class="header">Test Formulier</h2>
+    <div class="form">
+        <div class="desc">
+            <h3 class="noPadding">Naam:</h3>
+            <h3 class="noPadding">Adress:</h3>
+            <h3 class="noPadding">PC plaats:</h3>
+            <h3 class="noPadding">Telefoon:</h3>
+            <h3 class="noPadding">Email:</h3>
+            <h3 class="noPadding">Geslacht:</h3>
+            <h3 class="noPadding">Geb datum:</h3>
+            <h3 class="noPadding">* Verplichte velden</h3>
+        </div>
+        <div class="inputs">
+            <form method="POST" onsubmit="return checkForm(this)">
+                <div class="gap">
+                    <div class="naam">
+                        <input type="text" id="vnaam" name="vnaam" placeholder="* voornaam" onblur="checkText(this)" data-required>
+                        <input type="text" id="tv" name="tv" placeholder="tv">
+                        <input type="text" id="anaam" name="anaam" placeholder="* achternaam" onblur="checkText(this)" data-required>
+                    </div>
+                    <div>
+                        <input type="text" id="adress" name="adress" placeholder="* adress" onblur="checkText(this)" data-required>
+                    </div>
+                    <div>
+                        <input type="text" id="postcode" name="postcode" placeholder="* postcode" onblur="checkText(this)" data-required>
+                        <input type="text" id="plaats" name="plaats" placeholder="* plaats" onblur="checkText(this)" data-required>
+                    </div>
+                    <div>
+                        <input type="text" id="telefoon" name="telefoon" placeholder="telefoon">
+                    </div>
+                    <div>
+                        <input type="text" id="email" name="email" placeholder="email">
+                    </div>
+                    <div>
+                        M<input type="radio" id="M" name="geslacht" value="M">
+                        V<input type="radio" id="V" name="geslacht" value="V">
+                        O<input type="radio" id="O" name="geslacht" value="O">
+                    </div>
+                    <div class="gebDatum">
+                        <input type="date" id="gebDatum" name="gebDatum" placeholder="geboortedatum">
+                    </div>
+                    <div>
+                        <input type="submit" value="verstuur">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h3 id="errormsg"></h3>
+</body>
+
+</html>

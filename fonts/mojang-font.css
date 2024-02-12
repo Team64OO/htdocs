@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "Mojang";
+    src: url("./Mojang-Regular.ttf") format("truetype"), 
+         url("./Mojang-Bold.ttf") format("truetype"); 
+}

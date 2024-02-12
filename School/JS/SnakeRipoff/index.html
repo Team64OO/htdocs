@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Snake, but worse</title>
+    <script>
+        let snakeYPos;
+        let snakeXPos;
+        let snakeStep = 50;
+        let keyDown = "";
+        
+
+        window.onkeydown = function (direction) {
+            if ((direction.code == "KeyW" && keyDown != "KeyS") || (direction.code == "KeyS" && keyDown != "KeyW") || 
+                (direction.code == "KeyA" && keyDown != "KeyD") || (direction.code == "KeyD" && keyDown != "KeyA")) {
+                keyDown = direction.code;
+            }
+        }
+
+        play = setInterval(() => {
+            if (keyDown == "KeyW") {
+                // document.getElementById("snakeBody").style.top = snakeYPos + "px";
+                // document.getElementById("snakeBody").style.left = snakeXPos + "px";
+                snakeYPos = snakeHead.offsetTop;
+                document.getElementById("snakeHead").style.top = ((snakeYPos - snakeStep) - 119) + "px";
+                document.getElementById("snakeBody").style.top = ((snakeYPos - snakeStep) - 119) + "px";
+                document.getElementById("snakeBody").style.left = (snakeHead.offsetLeft - 8) + "px";
+            }
+            if (keyDown == "KeyS") {
+                // document.getElementById("snakeBody").style.top = snakeYPos + "px";
+                // document.getElementById("snakeBody").style.left = snakeXPos + "px";
+                snakeYPos = snakeHead.offsetTop;
+                document.getElementById("snakeHead").style.top = ((snakeYPos + snakeStep) - 119)+ "px";
+                document.getElementById("snakeBody").style.top = ((snakeYPos - snakeStep) - 119) + "px";
+                document.getElementById("snakeBody").style.left = (snakeHead.offsetLeft - 8) + "px";
+            }
+            if (keyDown == "KeyA") {
+                // document.getElementById("snakeBody").style.top = snakeYPos + "px";
+                // document.getElementById("snakeBody").style.left = snakeXPos + "px";
+                snakeXPos = snakeHead.offsetLeft;
+                document.getElementById("snakeHead").style.left = ((snakeXPos - snakeStep) - 8) + "px";
+                document.getElementById("snakeBody").style.left = ((snakeXPos + snakeStep) - 58) + "px";
+                document.getElementById("snakeBody").style.top = (snakeHead.offsetTop - 169) + "px";
+            }
+            if (keyDown == "KeyD") {
+                // document.getElementById("snakeBody").style.top = snakeYPos + "px";
+                // document.getElementById("snakeBody").style.left = snakeXPos + "px";
+                snakeXPos = snakeHead.offsetLeft;
+                document.getElementById("snakeHead").style.left = ((snakeXPos + snakeStep) - 8) + "px";
+                document.getElementById("snakeBody").style.left = ((snakeXPos + snakeStep) - 58) + "px";
+                document.getElementById("snakeBody").style.top = (snakeHead.offsetTop - 169) + "px";
+            }
+        }, 250);
+    </script>
+</head>
+
+<body>
+    <div class="playArea">
+        <img src="./images/checkerboardLightGreen.svg" alt="background" id="light">
+        <img src="./images/checkerboardDarkGreen.svg" alt="background" id="dark">
+        <div id="fixBackground"></div>
+    </div>
+    <h1 id="title">It's snake, but worse</h1>
+    <div class="IOS">
+        <img src="./images/IOS.svg" alt="IOS" style="width: 50px; height: 50px;">
+    </div>
+    <div class="snakeHeadStyle" id="snakeHead">
+        <img src="./images/Snake_Head.svg" alt="IOS" style="width: 50px; height: 50px;">
+    </div>
+    <div class="snakeBodyStyle" id="snakeBody">
+        <img src="./images/Snake_Body.svg" alt="IOS" style="width: 50px; height: 50px;">
+    </div>
+
+</body>
+
+</html>
