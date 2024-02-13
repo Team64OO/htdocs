@@ -6,6 +6,8 @@ body {
 }
 
 ul {
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -16,6 +18,14 @@ li {
     padding: 5px;
     padding-bottom: 20px;
     list-style-type: none;
+}
+
+.addEntry {
+    background-color: #28292d;
+    padding: 3px;
+    padding-bottom: 6px;
+    width: 110px;
+    border-radius: 15%;
 }
 
 a {

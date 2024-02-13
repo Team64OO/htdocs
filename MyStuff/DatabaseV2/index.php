@@ -11,9 +11,9 @@
 
 <body>
     <ul>
-        <li><a href="http://127.0.1.3/Projects/MyStuff/DatabaseV2/insert.php?id=' . $row['id'] . ' ">Add entry</a></li>
-    </ul>
-    <?php
+        <li><div class="addEntry"><a href="http://127.0.1.3/MyStuff/DatabaseV2/insert.php">Add entry</a></div></li>
+        <li>
+        <?php
     $conn = mysqli_connect("localhost", "root", "", "PHPDB");
     if (mysqli_connect_errno() || !$conn) {
         die(mysqli_connect_error());
@@ -33,17 +33,19 @@
         }
         $table .= '<tr> <td>' . $row["name"] . '</td> <td>' . $row["description"] . '</td> <td>' . $finished . '</td> <td>' . 
         $row["id"] . '</td> <td> <a href="' . $row["location"] . '">Visit Project</a> </td> <td> <div class="icons">
-            <div class="tooltip"> <a href="http://127.0.1.3/Projects/MyStuff/DatabaseV2/update.php?id=' . $row['id'] . '>
-            <span class="material-symbols-outlined">edit</span> </a> <span class="tooltiptext">Edit</span> </div> <div class="tooltip">
-            <a href="http://127.0.1.3/Projects/MyStuff/DatabaseV2/update.php?id=' . $row['id'] . '>
-            <span class="material-symbols-outlined">delete</span> </a> <span class="tooltiptext">Remove</span> </div> </div> </td> </tr>';
+        <div class="tooltip"> <a href="http://127.0.1.3/MyStuff/DatabaseV2/update.php?id=' . $row['id'] . '>
+        <span class="material-symbols-outlined">edit</span> </a> <span class="tooltiptext">Edit</span> </div> <div class="tooltip">
+        <a href="http://127.0.1.3/MyStuff/DatabaseV2/update.php?id=' . $row['id'] . '>
+        <span class="material-symbols-outlined">delete</span> </a> <span class="tooltiptext">Remove</span> </div> </div> </td> </tr>';
     }
     $table .= "</table>";
-
+    
     echo $table;
-
+    
     mysqli_close($conn);
     ?>
+    </li>
+</ul>
 </body>
 
 </html>
