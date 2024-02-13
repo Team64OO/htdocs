@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let text = {
+            aGroups: [
+                {
+                    "firstName": "Colin", "infix": "", "lastName": "Fransman", "class": "SD1A"
+                },
+                {
+                    "firstName": "Per", "infix": "", "lastName": "Son", "class": "SD1B"
+                },
+                {
+                    "firstName": "Who", "infix": "Is", "lastName": "Jason", "class": "SD1C"
+                }
+            ]
+        }
+        
+        function click_me() {
+            let output = "";
+            for (let index = 0; index < text.aGroups.length; index++) {
+                output += text.aGroups[index].firstName + " " + text.aGroups[index].infix + " " + text.aGroups[index].lastName + " " + text.aGroups[index].class + "<br>";
+            }
+            document.getElementById("demo").innerHTML = output;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="demo"></div>
+    <button onclick="click_me()">Click</button>
+</body>
+
+</html>

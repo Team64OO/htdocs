@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Jason() {
+            document.getElementById('dediv').innerHTML = 'Hier staat niets'
+            document.getElementById('dediv').style.backgroundColor = 'Red'
+            document.getElementById('dediv').style.color = 'white'
+            document.getElementById('dediv').style.width = '100px'
+        }
+
+        function JasonsBrother() {
+            document.getElementById('dediv').innerHTML = 'Hier staat iets'
+            document.getElementById('dediv').style.backgroundColor = 'Green'
+            document.getElementById('dediv').style.color = 'white'
+            document.getElementById('dediv').style.width = '90px'
+        }
+    </script>
+    <h1>Basis Javascript</h1>
+    <button onclick="JasonsBrother()">Iets</button>
+    <button onclick="Jason()">Niets</button>
+    <div id="dediv">Hier staat niets</div>
+</body>
+
+</html>

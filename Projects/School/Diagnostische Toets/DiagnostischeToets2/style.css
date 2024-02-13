@@ -1,0 +1,122 @@
+body {
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+    border-right: 3px solid #000000;
+}
+  
+li:last-child {
+    border-right: none;
+}
+
+.header {
+    display: flex;
+    padding: 40px;
+    padding-bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-snowflake:before {
+    content: "\f2dc";
+    font-size: 40px;
+}
+
+.fa-tree:before {
+    content: "\f1bb";
+    font-size: 40px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    font-weight: unset;
+}
+
+h4.bold {
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.infobox {
+    width: 55%;
+    height: 60vh;
+    background-color: #0000001a;
+    border-style: inset;
+    border-color: #0000004f;
+    flex-direction: column;
+}
+
+.info1 {
+    padding: 10px;
+    padding-left: 60px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subinfo1 {
+    padding: 0;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.info2 {
+    padding: 10px;
+    padding-left: 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subinfo2 {
+    padding: 0;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.signup {
+    display: flex;
+    width: 40%;
+    height: 60vh;
+    justify-content: center;
+}
+
+.learn {
+    width: 84px;
+    height: 20px;
+    align-self: flex-end;
+    margin-bottom: 60px;
+    text-decoration: none;
+    border-style: inset;
+    border-color: #000000;
+    font-weight: bold;
+    border-radius: 20%;
+}
+
+.x {
+    display: flex;
+}

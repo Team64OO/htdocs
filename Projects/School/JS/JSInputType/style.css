@@ -1,0 +1,63 @@
+.header {
+    padding: 0;
+    margin: 0;
+}
+
+.noPadding {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
+.gap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.form {
+    display: flex;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputs {
+    display: flex;
+    position: relative;
+    left: 20px;
+}
+
+.naam {
+    display: flex;
+    gap: 10px;
+}
+
+#vnaam {
+    width: 150px;
+}
+
+#tv {
+    width: 25px;
+}
+
+#anaam {
+    width: 150px;
+}
+
+#adress {
+    width: 360px;
+}
+
+#postcode {
+    width: 80px;
+}
+
+.gebDatum {
+    display: flex;
+    height: 21.2px;
+}

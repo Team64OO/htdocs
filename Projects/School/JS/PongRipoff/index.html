@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./pong.png">
+    <title>Pong, but worse</title>
+</head>
+
+<body>
+    <div id="layout">
+        <div>
+            <div id="batOverlapTop"></div>
+            <div id="container">
+                <div id="moveDiv"></div>
+                <div id="batLeft"></div>
+                <div id="batRight"></div>
+            </div>
+            <div id="batOverlapBottom"></div>
+        </div>
+        <div id="flex">
+            <div id="buttons">
+                <button onclick="fStart()" id="start">Start</button>
+                <button onclick="hardReset()" id="stop">Reset</button>
+            </div>
+            <div id="counter">
+                <div id="pointLeft">0</div>
+                <div id="colon">:</div>
+                <div id="pointRight">0</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let stepY;
+        let stepX;
+        let batLeftStepY = 10;
+        let batRightStepY = 10;
+        let batLeftYPos;
+        let batRightYPos;
+        let contWidth = 400;
+        let contHeight = 300;
+        let mvDivWidth = 20;
+        let mvDivHeight = 20;
+        let mvDiv = document.getElementById("moveDiv")
+        let contDiv = document.getElementById("container")
+        let score = 0;
+        let myInterval;
+        let isIntervalInProgress = false;
+        let keysDown = {};
+        let scoreLeft = 0;
+        let scoreRight = 0;
+        // let timeBounced = 1;
+        // let velocity = 0;
+
+
+        function direction() {
+            if (Math.round(Math.random()) == 1) {
+                stepX = 1;
+            } else {
+                stepX = -1;
+            }
+            if (Math.round(Math.random()) == 1) {
+                stepY = 1;
+            } else {
+                stepY = -1;
+            }
+        }
+
+        function fStart() {
+            if (!isIntervalInProgress) {
+                isIntervalInProgress = true;
+                direction();
+                myInterval = setTimeout(move, (50 / 15));
+            }
+        }
+
+        function fStop() {
+            clearInterval(myInterval);
+            isIntervalInProgress = false;
+        }
+        
+        function move() {
+            // velocityIncrement();
+            myInterval = setTimeout(move, (50 / 15));
+            let yPos = mvDiv.offsetTop;
+            let xPos = mvDiv.offsetLeft;
+            if ((yPos > batLeftYPos - 0 && yPos < batLeftYPos + 100) && xPos < 16) {
+                stepX = -stepX
+                document.getElementById("moveDiv").style.left = (xPos + 1) + "px";
+                // timeBounced = timeBounced + 1;
+                
+            } else {
+                if ((yPos > batRightYPos - 0 && yPos < batRightYPos + 100) && xPos > 761) {
+                    stepX = -stepX
+                    document.getElementById("moveDiv").style.left = (xPos - 1) + "px";
+                    // timeBounced = timeBounced + 1;
+                } else {
+                    if (yPos + stepY > 580) {
+                        stepY = -stepY
+                    }
+                    if (yPos + stepY < 0) {
+                        stepY = -stepY
+                    }
+                    let xPos = mvDiv.offsetLeft;
+                    if (xPos + stepX > 780) {
+                        stepX = -stepX
+                        scoreLeft = scoreLeft + 1;
+                        document.getElementById("pointLeft").innerHTML = scoreLeft;
+                        fReset();
+                    }
+                    if (xPos + stepX < 0) {
+                        stepX = -stepX
+                        scoreRight = scoreRight + 1;
+                        document.getElementById("pointRight").innerHTML = scoreRight;
+                        fReset();
+                    }
+                    mvDiv.style.top = (yPos + stepY) + "px";
+                    mvDiv.style.left = (xPos + stepX) + "px";
+                    if (!isIntervalInProgress) {
+                        document.getElementById("moveDiv").style.top = "280px";
+                        document.getElementById("moveDiv").style.left = "390px";
+                    }
+                }
+            }
+        }
+        
+        // function velocityIncrement() {
+            //     if (timeBounced % 11 == 0) {
+                //         velocity = velocity + 0.1;
+                //         stepX = stepX + velocity;
+                //         stepY = stepY + velocity;
+                //         timeBounced = timeBounced + 1
+                //         console.log("speed up")
+                //     }
+                // }
+                
+                window.onkeydown = function (moveBat) {
+                    keysDown[moveBat.code] = true;
+                }
+                window.onkeyup = function (e) {
+                    keysDown[e.code] = false;
+                }
+                setInterval(() => {
+                    if (keysDown["KeyW"] && batLeft.offsetTop > 0) {
+                        batLeftYPos = batLeft.offsetTop;
+                        document.getElementById("batLeft").style.top = (batLeftYPos - batLeftStepY) + "px";
+                    }
+                    if (keysDown["KeyS"] && batLeft.offsetTop < 500) {
+                        batLeftYPos = batLeft.offsetTop;
+                        document.getElementById("batLeft").style.top = (batLeftYPos + batLeftStepY) + "px";
+                    }
+                    if (keysDown["ArrowUp"] && batRight.offsetTop > 0) {
+                        batRightYPos = batRight.offsetTop;
+                        document.getElementById("batRight").style.top = (batRightYPos - batRightStepY) + "px";
+                    }
+                    if (keysDown["ArrowDown"] && batRight.offsetTop < 500) {
+                        batRightYPos = batRight.offsetTop;
+                        document.getElementById("batRight").style.top = (batRightYPos + batRightStepY) + "px";
+                    }
+                }, 50);
+                
+                function fReset() {
+                    clearInterval(myInterval);
+                    document.getElementById("batLeft").style.top = "240px"
+                    document.getElementById("batRight").style.top = "240px";
+                    document.getElementById("moveDiv").style.top = "280px";
+                    document.getElementById("moveDiv").style.left = "390px";
+                    // velocity = 1;
+                    // timeBounced = 1;
+                    isIntervalInProgress = false;
+                }
+                
+                function hardReset() {
+                    clearInterval(myInterval);
+                    document.getElementById("batLeft").style.top = "240px"
+                    document.getElementById("batRight").style.top = "240px";
+                    document.getElementById("moveDiv").style.top = "280px";
+                    document.getElementById("moveDiv").style.left = "390px";
+                    scoreLeft = 0;
+                    scoreRight = 0;
+                    document.getElementById("pointLeft").innerHTML = scoreLeft;
+                    document.getElementById("pointRight").innerHTML = scoreRight;
+                    // velocity = 1;
+                    // timeBounced = 1;
+                    isIntervalInProgress = false;
+                }
+                </script>
+</body>
+
+</html>

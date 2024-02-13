@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jason's stopwatch</title>
+    <script>
+        let milsec = 0;
+        let sec = 0;
+        let min = 0;
+        let milsecInterval;
+        let isIntervalInProgress = false;
+        let currentDisplay = 0;
+
+        function fStart() {
+            if (!isIntervalInProgress) {
+                isIntervalInProgress = true;
+                milsecInterval = setTimeout(timer, 10);
+            }
+        }
+
+        function timer() {
+            milsecInterval = setTimeout(timer, 10);
+            if (checkLowerThanTen(milsec)) {
+                document.getElementById("milsecdisplay").innerHTML = "0" + milsec;
+            } else {
+                document.getElementById("milsecdisplay").innerHTML = milsec;
+            }
+            milsec = milsec + 1;
+            if (milsec <= 99) {
+                if (checkLowerThanTen(milsec)) {
+                    document.getElementById("milsecdisplay").innerHTML = "0" + milsec;
+                } else {
+                    document.getElementById("milsecdisplay").innerHTML = milsec;
+                }
+            } else {
+                document.getElementById("milsecdisplay").innerHTML = "00";
+            }
+            if (milsec > 99) {
+                milsec = 0;
+                sec = sec + 1;
+                if (sec <= 59) {
+                    if (checkLowerThanTen(sec)) {
+                        document.getElementById("secdisplay").innerHTML = "0" + sec;
+                    } else {
+                        document.getElementById("secdisplay").innerHTML = sec;
+                    }
+                } else {
+                    document.getElementById("secdisplay").innerHTML = "00";
+                }
+            }
+            if (sec > 59) {
+                sec = 0;
+                min = min + 1;
+                if (checkLowerThanTen(min)) {
+                    document.getElementById("mindisplay").innerHTML = "0" + min;
+                } else {
+                    document.getElementById("mindisplay").innerHTML = min;
+                }
+            }
+        }
+
+        function fStop() {
+            clearInterval(milsecInterval);
+            isIntervalInProgress = false;
+        }
+
+        function fReset() {
+            milsec = 0;
+            sec = 0;
+            min = 0;
+            clearInterval(milsecInterval);
+            document.getElementById("milsecdisplay").innerHTML = "00";
+            document.getElementById("secdisplay").innerHTML = "00";
+            document.getElementById("mindisplay").innerHTML = "00";
+            isIntervalInProgress = false;
+        }
+
+        function checkLowerThanTen(time) {
+            if (time < 10) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function toggleDisplay(Display) {
+            if (Display % 2 == 0) {
+                document.getElementById("switch").style.backgroundColor = "white";
+                currentDisplay++;
+            } else if (Display % 2 != 0) {
+                document.getElementById("switch").style.backgroundColor = "#b3c7d0";
+                currentDisplay++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="everything">
+        <div class="content">
+            <div class="display" id="switch">
+                <div id="mindisplay" class="tmindisplay">00</div>
+                <div class="colon">:</div>
+                <div id="secdisplay" class="tmindisplay">00</div>
+                <div class="colon">:</div>
+                <div id="milsecdisplay" class="tmindisplay">00</div>
+            </div>
+            <div class="buttons">
+                <button id="fstart" onclick="fStart()" class="button"></button>
+                <button id="fstop" onclick="fStop()" class="button"></button>
+                <button id="freset" onclick="fReset()" class="button"></button>
+            </div>
+            <button class="lightSwitch" onclick="toggleDisplay(currentDisplay)"></button>
+            <img src="./timer.jpg" alt="timer" style="width: 130vh; object-fit: cover;">
+        </div>
+    </div>
+</body>
+
+</html>
