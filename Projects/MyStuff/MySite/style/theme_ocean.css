@@ -1,7 +1,0 @@
-body {
-    --backg: linear-gradient(45deg, rgba(70,199,230,1) 0%, rgba(30,13,148,1) 100%);
-    --nav: #ffffff53;
-    --navbar: linear-gradient(45deg, rgb(62, 147, 168) 0%, rgba(20,9,96,1) 100%);
-    --nav-hover: #27066f00;
-    --navbar-hover: #58bdef6f;
-}

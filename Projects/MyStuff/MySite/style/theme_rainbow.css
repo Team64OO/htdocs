@@ -1,8 +1,0 @@
-body {
-    --backg: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,132,0,1) 14%, rgba(245,255,0,1) 29%, rgba(18,255,0,1) 44%, rgba(0,255,243,1) 60%, rgba(0,22,255,1) 75%, rgba(243,0,255,1) 88%, rgba(255,0,181,1) 100%);
-    --font: #000;
-    --nav: #ffffff83;
-    --navbar: linear-gradient(45deg, rgba(184,0,0,1) 0%, rgba(177,92,0,1) 14%, rgba(162,168,0,1) 29%, rgba(12,173,0,1) 44%, rgba(0,158,151,1) 60%, rgba(0,13,154,1) 75%, rgba(140,0,147,1) 88%, rgba(144,0,102,1) 100%);
-    --nav-hover: #27066f00;
-    --navbar-hover: #ef8f586f;
-}
