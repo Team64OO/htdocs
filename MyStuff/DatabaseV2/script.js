@@ -15,7 +15,7 @@ function checkForm(element) {
     }
     for (let index = 0; index < inputs.length; index++) {
         if (inputs[index].value == "") {
-            document.getElementById("errormsg").innerHTML = "Bepaalde velden zijn nog niet ingevuld."
+            document.getElementById("errormsg").innerHTML = "Please fill in the highlighted fields."
             return false;
         }
     }

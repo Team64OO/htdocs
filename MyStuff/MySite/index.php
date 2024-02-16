@@ -38,7 +38,7 @@ if (isset($_GET["theme"])) {
         <i class="fa fa-caret-down2"></i>
         </button>
         <div class="dropdown-content3">
-        <a href="/MyStuff/MySite/projects.php">Projects</a>
+        <a href="http://127.0.1.3/MyStuff/DatabaseV2/index.php" target="_blank">Projects</a>
         <a href="https://trello.com/b/6v0dK76W/module-1" target="_blank">Trello</a>
         </div>
     </div>

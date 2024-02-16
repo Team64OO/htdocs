@@ -110,34 +110,35 @@ table {
     flex-direction: column;
 }
 
-/* insert page only */
+#backFromInsert {
+    width: 200px;
+}
 
-    #backFromInsert {
-        width: 200px;
-    }
+#insertForm {
+    padding: 10px;
+    background-color: #28292d;
+    border-radius: 10%;
+    align-items: center;
+    gap: 5px;
+}
 
-    #insertForm {
-        padding: 10px;
-        background-color: #28292d;
-        border-radius: 10%;
-        align-items: center;
-        gap: 5px;
-    }
+#desc {
+    width: 300px;
+}
 
-    #desc {
-        width: 300px;
-    }
+textarea {
+    font-family: auto;
+}
 
-    textarea {
-        font-family: auto;
-    }
+#finished {
+    width: 50px;
+}
 
-    #finished {
-        width: 50px;
-    }
+#location {
+    width: 300px;
+}
 
-    #location {
-        width: 300px;
-    }
-
-/* insert page only */
+.flex-center {
+    display: flex;
+    justify-content: center;
+}

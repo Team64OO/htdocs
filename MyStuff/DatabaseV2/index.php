@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My projects database</title>
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <link rel="icon" href="../Mysite/images/test.png">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
 </head>
 
@@ -28,7 +29,7 @@
             $table .= "<tr><th>Name:</th><th>Desc:</th><th>Finished?</th><th>Location:</th><th>Actions</th><tr>";
 
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row["finished"] == 1) {
+                if ($row["finished"] == 1 || $row["finished"] == "True") {
                     $finished = "<p style='color: green; padding: 0; margin: 0;'>yes</p>";
                 } else {
                     $finished = "<p style='color: red; padding: 0; margin: 0;'>no</p>";

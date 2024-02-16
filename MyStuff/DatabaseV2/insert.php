@@ -16,7 +16,7 @@
         </div>
         <div class="content">
             <form method="POST" onsubmit="return checkForm(this);" autocomplete="off">
-                <div class="flex-column"  id="insertForm">
+                <div class="flex-column" id="insertForm">
                     <label for="name">Name of the project</label>
                     <input type="text" id="name" name="Name" placeholder="Name:" onblur="checkText(this);" data-required>
                     <label for="desc">Description of the project</label>
@@ -46,11 +46,12 @@
     $finished = (isset($_POST["Finished"])) ? $_POST["Finished"] : "";
     $location = (isset($_POST["Location"])) ? $_POST["Location"] : "";
     if (isset($_POST["Name"]) && isset($_POST["Finished"]) && isset($_POST["Location"])) {
-        $query = "INSERT INTO projects (name, description, finished, location) VALUES ('$name', '$desc', '$finished', '$location')";
+        $query = "INSERT INTO projects (name, description, finished, location) 
+                  VALUES ('$name', '$desc', '$finished', '$location')";
     }
     if (isset($_POST["Name"]) && isset($_POST["Finished"]) && isset($_POST["Location"])) {
         if ($conn->query($query) === TRUE) {
-            echo "Item succesfully added";
+            header("location: index.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -58,7 +59,9 @@
 
     mysqli_close($conn);
     ?>
-    <div id="errormsg"></div>
+    <div class="flex-center">
+        <div id="errormsg"></div>
+    </div>
 </body>
 
 </html>
