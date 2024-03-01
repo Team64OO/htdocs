@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../Mysite/images/test.png">
     <script src="./script.js"></script>
 
     <?php
@@ -39,11 +40,11 @@
 <body>
     <div class="page">
         <div class="content">
-            <div class="moveToPage" id="backFromInsert"><a href="http://127.0.1.3/MyStuff/DatabaseV2/">Back to database</a></div>
+            <div class="moveToPage" id="backFromUpdate"><a href="http://127.0.1.3/MyStuff/DatabaseV2/">Back to database</a></div>
         </div>
         <div class="content">
             <form method="POST" onsubmit="return checkForm(this);" autocomplete="off">
-                <div class="flex-column" id="insertForm">
+                <div class="flex-column" id="editForm">
                     <label for="name">Name of the project</label>
                     <input type="text" id="name" name="Name" value="<?php echo $name ?>" placeholder="Name:" onblur="checkText(this);" data-required>
                     <label for="desc">Description of the project</label>
@@ -94,7 +95,7 @@
     mysqli_close($conn);
     ?>
     <div class="flex-center">
-        <div id="errormsg"></div>
+        <div id="outputmsg"></div>
     </div>
 </body>
 

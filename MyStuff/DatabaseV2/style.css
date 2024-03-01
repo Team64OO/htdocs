@@ -102,7 +102,19 @@ table {
     flex-direction: column;
 }
 
+#toLoginPage {
+    width: 100px;
+}
+
 #backFromInsert {
+    width: 200px;
+}
+
+#backFromUpdate {
+    width: 200px;
+}
+
+#backFromLogin {
     width: 200px;
 }
 
@@ -112,6 +124,25 @@ table {
     border-radius: 10%;
     align-items: center;
     gap: 5px;
+}
+
+#editForm {
+    padding: 10px;
+    background-color: #28292d;
+    border-radius: 10%;
+    align-items: center;
+    gap: 5px;
+}
+
+#loginForm {
+    padding: 10px;
+    background-color: #28292d;
+    border-radius: 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    height: 120px;
 }
 
 #desc {
@@ -133,4 +164,17 @@ textarea {
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+
+#username {
+ width: 150px;
+}
+
+#password {
+    width: 150px;
+}
+
+#loginSubmit {
+    width: 158px;
 }

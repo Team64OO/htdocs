@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rainbow-text {
+            background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,106,0,1) 5%, rgba(255,184,0,1) 10%, rgba(255,213,0,1) 15%, rgba(249,255,0,1) 20%, rgba(224,255,0,1) 25%, rgba(155,255,0,1) 30%, rgba(0,255,38,1) 35%, rgba(0,255,7,1) 40%, rgba(0,255,119,1) 45%, rgba(0,253,255,1) 50%, rgba(0,198,255,1) 55%, rgba(0,99,255,1) 60%, rgba(8,0,255,1) 65%, rgba(63,0,255,1) 70%, rgba(128,0,255,1) 75%, rgba(171,0,255,1) 80%, rgba(201,0,255,1) 85%, rgba(255,0,194,1) 90%, rgba(255,0,95,1) 95%, rgba(255,0,0,1) 100%);
+            background-size: 100000% 100000%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            animation: rainbow 4s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 0%
+            }
+
+            100% {
+                background-position: 100% 0%
+            }
+        }
+    </style>
+</head>
+<body class="rainbow-text"> 
+
+</body>
+</html>

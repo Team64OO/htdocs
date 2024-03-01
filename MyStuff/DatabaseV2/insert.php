@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../Mysite/images/test.png">
     <script src="./script.js"></script>
 </head>
 
@@ -60,7 +61,7 @@
     mysqli_close($conn);
     ?>
     <div class="flex-center">
-        <div id="errormsg"></div>
+        <div id="outputmsg"></div>
     </div>
 </body>
 

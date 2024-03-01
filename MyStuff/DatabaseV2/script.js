@@ -15,7 +15,7 @@ function checkForm(element) {
     }
     for (let index = 0; index < inputs.length; index++) {
         if (inputs[index].value == "") {
-            document.getElementById("errormsg").innerHTML = "Please fill in the highlighted fields."
+            document.getElementById("outputmsg").innerHTML = "Please fill in the highlighted fields."
             return false;
         }
     }

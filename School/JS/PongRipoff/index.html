@@ -142,6 +142,7 @@
                 window.onkeyup = function (e) {
                     keysDown[e.code] = false;
                 }
+                
                 setInterval(() => {
                     if (keysDown["KeyW"] && batLeft.offsetTop > 0) {
                         batLeftYPos = batLeft.offsetTop;

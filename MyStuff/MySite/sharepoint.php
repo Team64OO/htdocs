@@ -31,7 +31,7 @@ if (isset($_GET["theme"])) {
         </a>
         <a href="https://stdeltion.sharepoint.com/sites/studenten" style="padding: 3px; background: var(--navbar); border-radius: 25%; width: 120px; height: 120px; display: flex; justify-content: center; flex-direction: column; text-decoration: none;" target="_blank">
             <img src="./images/home<?php echo( (isset($_SESSION["theme"]) && ($_SESSION["theme"] == "light" || $_SESSION["theme"] == "ocean" || $_SESSION["theme"] == "rainbow")) ? "light" : "dark" ) ?>.svg" alt="settings" style="height: 34.4px; margin-top: 10px;">
-            <h3 style="color: var(--font); text-decoration: none; text-align: center;">Home</h3>
+            <h3 style="color: var(--font); text-decoration: none; text-align: center; font-size: 16px;">Sharepoint</h3>
         </a>
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; gap: 10px; padding: 5px;">
