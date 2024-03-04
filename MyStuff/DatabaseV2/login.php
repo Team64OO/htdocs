@@ -17,11 +17,16 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION["role"] = $row["role"];
             $_SESSION["loggedIn"] = true;
             header("Location: index.php");
-        } else {
+        }
+        if (!$passwordVerified) {
             $output = "wrongData";
         }
     }
+    if (mysqli_num_rows($result) == 0) {
+        $output = "wrongData";
+    }
 }
+
 
 mysqli_close($conn);
 ?>
@@ -64,9 +69,7 @@ mysqli_close($conn);
                 document.getElementById("outputmsg").innerHTML = "Combination of username and password is incorrect"
             </script><?php
                     }
-                } /*else {
-                    echo "\$output is empty while it should't be empty";
-                } */?>
+                } ?>
 </body>
 
 </html>

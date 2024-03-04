@@ -28,6 +28,7 @@ if (isset($_GET["theme"])) {
         <div class="dropdown-content2">
         <a href="https://stdeltion.sharepoint.com/sites/studenten" target="_blank">Sharepoint</a>
         <a href="https://roosters.deltion.nl/roster/view/?type=group&name=SD1A&week=1" target="_blank">Rooster</a>
+        <a href="https://outlook.office.com/mail/" target="_blank">Mail</a>
         <a href="/MyStuff/Mysite/sharepoint.php">More...</a>
         </div>
     </div>
@@ -58,6 +59,5 @@ if (isset($_GET["theme"])) {
             <!-- <p>Pa's wijze lynx bezag vroom het fikse aquaduct.1234567890</p> -->
         </div>
     </h1>
-    <div class="why"></div>
 </body>
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 106, 0, 1) 5%, rgba(255, 184, 0, 1) 10%, rgba(255, 213, 0, 1) 15%, rgba(249, 255, 0, 1) 20%, rgba(224, 255, 0, 1) 25%, rgba(155, 255, 0, 1) 30%, rgba(0, 255, 38, 1) 35%, rgba(0, 255, 7, 1) 40%, rgba(0, 255, 119, 1) 45%, rgba(0, 253, 255, 1) 50%, rgba(0, 198, 255, 1) 55%, rgba(0, 99, 255, 1) 60%, rgba(8, 0, 255, 1) 65%, rgba(63, 0, 255, 1) 70%, rgba(128, 0, 255, 1) 75%, rgba(171, 0, 255, 1) 80%, rgba(201, 0, 255, 1) 85%, rgba(255, 0, 194, 1) 90%, rgba(255, 0, 95, 1) 95%, rgba(255, 0, 0, 1) 100%);
+            background-size: 100000% 100000%;
+            font-size: 24px;
+            animation: rainbow 4s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 0%
+            }
+
+            100% {
+                background-position: 100% 0%
+            }
+        }
+
+        #ball {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: all 20ms;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+
+<body class="rainbow-text">
+    <div class="area">
+        <div class="rainbow-text" id="ball"></div>
+    </div>
+</body>
+<script>
+    let myInterval;
+    let ball = document.getElementById("ball");
+    let stepX = 1;
+    let stepY = 1;
+    let ballXPos;
+    let ballYPos;
+    let yInvert = false;
+    let xInvert = false;
+
+    function move() {
+        myInterval = setTimeout(move, (50, 15));
+        ballXPos = ball.offsetLeft;
+        ballYPos = ball.offsetTop;
+        if (ballXPos <= 1510 && xInvert == false || ballXPos < 0 && xInvert == true)  {
+            xInvert = false
+            document.getElementById("ball").style.left = (ballXPos + stepX) + "px";
+        } else {
+            xInvert = true;
+            document.getElementById("ball").style.left = (ballXPos - (stepX * 17)) + "px";
+        }
+        if (ballYPos <= 660 && yInvert == false || ballYPos < 10 && yInvert == true)  {
+            yInvert = false
+            document.getElementById("ball").style.top = (ballYPos + stepY) + "px";
+        } else {
+            yInvert = true;
+            document.getElementById("ball").style.top = (ballYPos - (stepY * 17)) + "px";
+        }
+    }
+
+    move();
+</script>
+
+</html>

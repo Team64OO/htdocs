@@ -6,6 +6,7 @@ body {
 }
 
 .page {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +27,7 @@ body {
     padding: 3px;
     padding-bottom: 6px;
     width: 110px;
-    border-radius: 15%;
+    border-radius: 20px;
 }
 
 a {
@@ -42,6 +43,11 @@ td,
 th {
     padding: 2px 8px;
     text-align: center;
+}
+
+.descLimit {
+    max-width: 400px;
+    overflow: hidden;
 }
 
 table {
@@ -177,4 +183,50 @@ textarea {
 
 #loginSubmit {
     width: 158px;
+}
+
+#deleteConfirm {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #1d1e20;
+    border-radius: 20px;
+    padding-top: 10px;
+    left: 670px;
+    top: 24000px;
+    z-index: 99;
+}
+
+#deleteConfirmHeader {
+    text-align: center;
+}
+
+#deleteConfirmNo {
+    color: red;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    cursor: pointer;
+}
+
+#deleteConfirmYes {
+    color: green;
+    margin: 0;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+i {
+    font-size: 25px;
+    color: white;
+}
+
+#dragDiv {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
 }
