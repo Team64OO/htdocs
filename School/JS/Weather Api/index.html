@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <ol>
+            <li class="flex">Show Weather:
+                <button onclick="fLoadCurrentWeather_fetch()">Click to show current weather</button>
+                <button onclick="fLoadWeatherForecast_fetch()">Click to show weather forecast</button>
+                <button onclick="fClear()">Clear</button>
+            </li>
+        </ol>
+        <div id="divA" class="divA">
+            <div id="out_data"></div>
+        </div>
+    </div>
+</body>
+
+</html>

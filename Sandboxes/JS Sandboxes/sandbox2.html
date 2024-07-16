@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="elem" onclick="checker()">
+    <input type="checkbox" id="elem2" onclick="checker2()">
+    <script>
+        let elem = document.getElementById('elem');
+        let elem2 = document.getElementById('elem2');
+        
+        function checker() {
+            if (elem2.checked) {
+                elem2.checked = false;
+                elem.checked = true;   
+            }
+        }
+        
+        function checker2() {
+            if (elem.checked) {
+                elem.checked = false;
+                elem2.checked = true;   
+            }
+        }
+    </script>
+</body>
+</html>

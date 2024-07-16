@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="bg-dark">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column align-items-center" style="width: 30%;">
+            <div class="d-flex p-2">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+                        onclick="getSymbol('%')" checked>
+                    <label class="btn btn-secondary" for="btnradio1">%</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
+                        onclick="getSymbol('‰')">
+                    <label class="btn btn-secondary" for="btnradio2">‰</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
+                        onclick="getSymbol('ppm')">
+                    <label class="btn btn-secondary" for="btnradio3">ppm</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off"
+                        onclick="getSymbol('ppb')">
+                    <label class="btn btn-secondary" for="btnradio4">ppb</label>
+                </div>
+
+            </div>
+            <div class="input-group mb-3">
+                <button type="button" class="btn btn-secondary" id="button" onclick="replacer()"
+                    data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false"
+                    aria-controls="collapseWidthExample"">Calculate</button>
+                <input type=" number" class="form-control text-truncate" id="input" placeholder="" aria-label=""
+                    aria-describedby="basic-addon2" onclick="clearInput(this)">
+                    <span class="input-group-text bg-secondary text-light" id="basic-addon2"
+                        style="border: none;">%</span>
+            </div>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" id="output" style="width: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

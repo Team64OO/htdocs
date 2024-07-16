@@ -32,9 +32,9 @@ function fJson2Html(json, title) {
     table += "</tr>";
     for(var i=0; i<json.length; i++) {
         table += "<tr>";
-            table += "<td>" + (i+1) + "</td>";              // zet een volgorde nummer voor in de rij
-            table += "<td>" + json[i].naam + "</td>";       // haal van de array nr i van de json, de object key "naam" op
-            table += "<td>" + json[i].brouwer + "</td>";    // haal van de array nr i van de json, de object key "brouwer" op
+            table += "<td>" + (i+1) + "</td>";
+            table += "<td>" + json[i].naam + "</td>";
+            table += "<td>" + json[i].brouwer + "</td>";
         table += "</tr>";
     }
     table += "</table>";

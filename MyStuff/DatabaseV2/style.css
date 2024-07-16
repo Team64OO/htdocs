@@ -195,6 +195,7 @@ textarea {
     left: 670px;
     top: 24000px;
     z-index: 99;
+    cursor: all-scroll;
 }
 
 #deleteConfirmHeader {

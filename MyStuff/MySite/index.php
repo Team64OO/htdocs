@@ -46,7 +46,7 @@ if (isset($_GET["theme"])) {
     <a href="https://digit-mbo.nl/" target="_blank">DIGIT</a>
     <a href="https://github.com/" target="_blank">Github</a>
     <a href="https://www.esl-lab.com/" target="_blank">ESL lab</a>
-    <a href="http://127.0.1.3/School/JS/" target="_blank">Jason?</a>
+    <a href="http://127.0.1.3/School/JS/Weather%20Api/" target="_blank">Weather</a>
     <a href="https://rekenblokken.secure.malmberg.nl/chapter/es:96FD449A-15C1-4DA6-9B4D-5B9DB22B1114" target="_blank">Rekenen</a>
     <li style="float:right; list-style-type: none;">
         <button style="padding: 0; background: none; border: none; cursor: pointer; height: 44.8px;" ><a href="/MyStuff/MySite/settings.php" style="padding: 3px;"><img src="./images/settings<?php echo( (isset($_SESSION["theme"]) && ($_SESSION["theme"] == "light" || $_SESSION["theme"] == "ocean" || $_SESSION["theme"] == "rainbow")) ? "light" : "dark" ) ?>.svg" alt="settings" style="height: 34.4px;"></a></button>
@@ -56,7 +56,6 @@ if (isset($_GET["theme"])) {
     <h1>
         <div class="center">
             <p>A place for everything and anything</p>
-            <!-- <p>Pa's wijze lynx bezag vroom het fikse aquaduct.1234567890</p> -->
         </div>
     </h1>
 </body>

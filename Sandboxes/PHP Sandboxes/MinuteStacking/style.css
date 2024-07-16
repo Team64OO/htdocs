@@ -1,0 +1,79 @@
+@import url("/fonts/digital-font.css");
+
+body {
+    overflow: hidden;
+}
+
+.everything {
+    position: relative;
+    bottom: 460px;
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b3c7d0;
+    width: 377px;
+    height: 168px;
+    font-family: Digital;
+    position: relative;
+    top: 582px;
+    left: -12px;
+    z-index: 1;
+    font-size: 121px;
+    border-radius: 50px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 620px;
+    right: 12px;
+    z-index: 1;
+    width: 488px;
+}
+
+.button {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tmindisplay {
+    display: flex;
+    justify-content: center;
+    width: 110px;
+}
+
+.colon {
+    position: relative;
+    width: 16px;
+    left: -20px;
+}
+
+.flexCenter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    left: 440px;
+    top: -400px;
+    width: 310px;
+    height: 100px;
+}
+
+.audio {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}

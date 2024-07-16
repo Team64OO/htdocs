@@ -16,8 +16,7 @@ if (!isset($_SESSION["letters"])) {
     "test"
     );                                      */
     $woorden = array( 
-    "zebrapad",
-    "test"
+    "zebrapad"
     );
     $randWoord = $woorden[rand(0, count($woorden) - 1)];
     for ($i=0; $i < strlen($randWoord); $i++) { 

@@ -29,10 +29,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
     if ($role != "user") {
         $table .= '<tr> <td>' . $row["name"] . '</td> <td class=\'descLimit\'>' . $row["description"] . '</td> <td>' . $finished .
-            '</td> <td> <a href="' . $row["location"] . '" id="location">Visit Project</a> </td> <td>' . $row["id"] . '</td> <td> <div class="icons">
+        '</td> <td> <a href="' . $row["location"] . '" id="location">Visit Project</a> </td> <td>' . $row["id"] . '</td> <td> <div class="icons">
         <div class="tooltip"> <a href="http://127.0.1.3/MyStuff/DatabaseV2/update.php?id=' . $row['id'] . '"> 
         <i class="fi fi-sr-pencil"></i> </a> <span class="tooltiptext">Edit</span> </div> <div class="tooltip">
-        <button onclick="showDeleteConfirm(' . $row["id"] . ')">
+        <button onclick="showDeleteConfirm(' . $row["id"] . ')" style="cursor: pointer">
         <i class="fi fi-sr-trash"></i> </button> <span class="tooltiptext">Remove</span> </div> </div> </td> </tr>';
     } elseif ($role == "user") {
         $table .= '<tr> <td>' . $row["name"] . '</td> <td>' . $row["description"] . '</td> <td>' . $finished .

@@ -30,6 +30,6 @@ function showDeleteConfirm(id) {
 }
 
 function hideDeleteConfirm() {
-    document.getElementById("deleteConfirm").style.top = "1000px";
+    document.getElementById("deleteConfirm").style.top = "100000px";
     
 }

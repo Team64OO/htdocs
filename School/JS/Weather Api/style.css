@@ -1,0 +1,80 @@
+* {
+    font-family: math;
+}
+
+body {
+    font-family: arial, Helvetica;
+    line-height:1.5em;
+}
+#main {
+    min-width: 700px;
+    max-width: 700px;
+}
+.divA {
+    display: none;
+    border:1px solid gray;
+    padding:7px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    height: 400px;
+}
+#out_title {
+    color: darkred;
+    font-style: oblique;
+}
+#out_data {
+    font-size:80%;
+    max-height:400px;
+    overflow:auto;
+}
+.txt {
+    font-size:90%;
+    font-style: italic;
+}
+ol {
+    border:1px dashed darkred;
+    border-radius: 4px;
+    padding-top:10px;
+}
+ol li {
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4 {
+    margin:5px 0 0 0;
+}
+
+p {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+td,th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+th {
+    background-color: cornflowerblue;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    background-color: lightskyblue;
+}
+
+img {
+    max-width: 40px;
+    max-height: 40px;
+}
